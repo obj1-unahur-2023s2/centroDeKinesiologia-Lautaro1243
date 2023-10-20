@@ -8,7 +8,7 @@ describe "Pruebas parte 1"{
 	const bici1 = new Bicicleta()
 	const minitramp1 = new Minitramp()
 	
-	test "leonardo puede usar los 2 aparatos creados"{
+	test "leonardo puede usar los 3 aparatos creados"{
 		assert.that(magneto1.puedeUsar(leonardo))
 		assert.that(bici1.puedeUsar(leonardo))
 		assert.that(minitramp1.puedeUsar(leonardo))

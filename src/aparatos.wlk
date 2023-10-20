@@ -3,7 +3,7 @@ class Aparato {
 	
 	method puedeUsar(unaPersona)
 	method serUsado(unaPersona)
-	method necesitaMantenimiento()
+	method necesitaMantenimiento() = false
 	method realizarMantenimiento()
 }
 
@@ -35,13 +35,13 @@ class Bicicleta inherits Aparato {
 class Minitramp inherits Aparato {
 	override method puedeUsar(unaPersona) = unaPersona.nivelDeDolor() < 20
 	override method serUsado(unaPersona){ unaPersona.nivelDeFortaleza( unaPersona.nivelDeFortaleza() + unaPersona.edad() * 0.1 ) }
-	override method necesitaMantenimiento() = null
+	
 	override method realizarMantenimiento(){ }
 }
 
 object centro{
 	const aparatos = []
-	const pacientes = []
+	const pacientes = #{}
 	
 	method agregarAparato(unAparato){ aparatos.add(unAparato) }
 	method coloresDeLosAparatos() = aparatos.map({ aparato => aparato.color() }).asSet()
